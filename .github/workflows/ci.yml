@@ -11,11 +11,15 @@ on:
 jobs:
   cron:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: velocibear/create-empty-commit@v1.0.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          email: odyn@gmail.com
-          name: odyn
-          message: undetected
+        - name: Git checkout
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: '0'
+        - name: git
+          run: |
+            git --version
+            git config user.name "GitHub Actions Bot"
+            git config user.email "odyn@gmail.com"
+            git commit --allow-empty -m "undetected"
+            git push origin main
