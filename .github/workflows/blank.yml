@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      uses: velocibear/create-empty-commit@v1.0.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        email: odyn@gmail.com
-        name: odyn
-        message: undetected
+      - uses: velocibear/create-empty-commit@v1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          email: odyn@gmail.com
+          name: odyn
+          message: undetected
